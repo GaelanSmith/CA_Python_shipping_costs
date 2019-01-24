@@ -1,4 +1,13 @@
-﻿def ground_shipping(weight):
+﻿'''
+This script defines three shipping methods
+and determines which method is the cheapeast
+based on the weight of the package.
+'''
+
+def ground_shipping(weight):
+
+  ground_flat_rate = 20
+  
   if weight <= 2:
     ppp = 1.50
   elif weight <= 6:
@@ -7,12 +16,16 @@
     ppp = 4.00
   elif weight > 10:
     ppp = 4.75
-  cost = 20 + ppp*weight
+  cost = ground_flat_rate + ppp*weight
   return cost
 
 premium_ground = 125.00
+'''Standard flat rate for premium ground shipping.
+  Does not change based on weight.
+'''
 
 def drone_shipping(weight):
+
   if weight <= 2:
     ppp = 4.50
   elif weight <= 6:
@@ -24,7 +37,10 @@ def drone_shipping(weight):
   cost = ppp*weight
   return cost
 
+# First method to determine and print the cheapest shipping method.
+
 def cheapest(weight):
+
   if ground_shipping(weight) < drone_shipping(weight) and ground_shipping(weight) < premium_ground:
     return "The cheapest option is ground shipping, which will cost $" + str(ground_shipping(weight)) + " for a package that weighs " + str(weight) + " lb."
   elif drone_shipping(weight) < ground_shipping(weight) and drone_shipping(weight) < premium_ground:
@@ -35,7 +51,10 @@ def cheapest(weight):
 print(cheapest(4.8))
 print(cheapest(41.5))
 
+# Second method to determine and print the cheapest shipping method.
+
 def print_cheapest(weight):
+
   ground = ground_shipping(weight)
   drone = drone_shipping(weight)
   premium = premium_ground
