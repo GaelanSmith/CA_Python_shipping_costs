@@ -1,1 +1,1 @@
-Using Python to determine and print the cheapest shipping cost. Based on Codecademy Sal's Shipping
+Using Python to determine and print the cheapest shipping cost. Based on Codecademy Sal's Shipping https://www.codecademy.com/paths/data-science/tracks/dspath-functions-and-logic/modules/dspath-control-flow/projects/sals-shipping
